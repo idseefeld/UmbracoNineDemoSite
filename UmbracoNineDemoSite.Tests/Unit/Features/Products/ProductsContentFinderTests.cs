@@ -12,6 +12,7 @@ using UmbracoNineDemoSite.Integrations.Products.Services;
 
 namespace UmbracoNineDemoSite.Tests.Unit.Features.Products
 {
+    [TestFixture]
     public class ProductsContentFinderTests
     {
         #region properties
