@@ -8,8 +8,11 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<Compile Remove="Integration\**" />
 		<Compile Remove="Unit\Features\Shared\Components\ContentBlock\**" />
+		<EmbeddedResource Remove="Integration\**" />
 		<EmbeddedResource Remove="Unit\Features\Shared\Components\ContentBlock\**" />
+		<None Remove="Integration\**" />
 		<None Remove="Unit\Features\Shared\Components\ContentBlock\**" />
 	</ItemGroup>
 
@@ -18,6 +21,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="AutoFixture.NUnit3" Version="4.18.1" />
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="9.0.7" />
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
 		<PackageReference Include="Moq" Version="4.20.72" />

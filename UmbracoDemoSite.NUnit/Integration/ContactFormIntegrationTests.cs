@@ -1,11 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.Testing;
-using NUnit.Framework;
-using System.Collections.Generic;
 using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
 
-namespace UmbracoDemoSite.Tests.Integration;
+namespace UmbracoDemoSite.NUnit.Integration;
 [TestFixture]
 public class ContactFormIntegrationTests
 {
@@ -19,9 +15,15 @@ public class ContactFormIntegrationTests
         WebApplicationFactoryClientOptions options = new()
         {
             AllowAutoRedirect = false, // We want to test the redirect behavior
-            BaseAddress = new System.Uri("https://localhost:44372/") // Ensure this matches your application's base address
+            BaseAddress = new Uri("https://localhost:44372/") // Ensure this matches your application's base address
         };
         _client = _factory.CreateClient(options);
+    }
+    [OneTimeTearDown]
+    public void OneTimeTearDown()
+    {
+        _client?.Dispose();
+        _factory?.Dispose();
     }
 
     [Test]
@@ -37,7 +39,7 @@ public class ContactFormIntegrationTests
         var content = new FormUrlEncodedContent(formData);
 
         // Act
-        var response = await _client!.PostAsync("/Contact-us/", content);
+        var response = await _client!.PostAsync("/Contact/", content);
 
         // Assert
         Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.Redirect));

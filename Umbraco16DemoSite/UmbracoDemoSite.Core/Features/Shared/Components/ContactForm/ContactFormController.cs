@@ -41,7 +41,7 @@ public class ContactFormController(
         //}
 
         // Do some emails sending magic here, not relevant for this demo.
-        TempData.Add(TempDataKey.ResponseMessage, $"Thank you {model.Name}!");
+        TempData.Add(TempDataKey.ResponseMessage, $"Thank you {model.Name} ({model.Email}) for your comment: {model.Comment}!");
         return RedirectToCurrentUmbracoPage();
     }
 }

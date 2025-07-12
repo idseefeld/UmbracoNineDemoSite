@@ -1,6 +1,8 @@
 ﻿using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("UmbracoDemoSite.Tests")]
+[assembly: InternalsVisibleTo("UmbracoDemoSite.NUnit")]
+[assembly: InternalsVisibleTo("UmbracoDemoSite.Core")]
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 

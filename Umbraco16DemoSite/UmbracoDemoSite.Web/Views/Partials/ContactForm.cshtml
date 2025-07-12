@@ -1,0 +1,47 @@
+﻿@using System.Web
+@using Microsoft.AspNetCore.Html
+@using UmbracoDemoSite.Core.Features.Shared.Components.ContactForm
+@using UmbracoDemoSite.Core.Features.Shared.Constants
+@model ContactFormModel
+@{
+    var response = TempData[TempDataKey.ResponseMessage] as string;
+    IHtmlContent? responseMessage = (response == null)
+        ? null
+        : new HtmlString(response.ToString());
+
+    var formModel = Model;
+}
+
+@if (formModel != null)
+{
+    <section class="section">
+        <div class="container">
+            <div class="col-md-12">
+                @if (responseMessage == null)
+                {
+                    using (Html.BeginUmbracoForm<ContactFormController>(nameof(ContactFormController.Submit), FormMethod.Post))
+                    {
+                        <div>
+                            @Html.LabelFor(x => formModel.Name) @Html.ValidationMessageFor(x => formModel.Name)<br />
+                            @Html.EditorFor(x => formModel.Name)
+                        </div>
+                        <div>
+                            @Html.LabelFor(x => formModel.Email) @Html.ValidationMessageFor(x => formModel.Email)<br />
+                            @Html.EditorFor(x => formModel.Email)
+                        </div>
+                        <div>
+
+                            @Html.LabelFor(x => formModel.Comment) @Html.ValidationMessageFor(x => formModel.Comment)<br />
+                            @Html.TextAreaFor(x => formModel.Comment)
+                        </div>
+                        <input type="submit" />
+                    }
+                }
+                else
+                {
+                    @responseMessage
+                }
+            </div>
+        </div>
+    </section>
+}

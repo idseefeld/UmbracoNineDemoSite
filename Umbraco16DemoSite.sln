@@ -23,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "v16", "v16", "{02EA681E-C7D
 		Umbraco16DemoSite\Readme.md = Umbraco16DemoSite\Readme.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbracoDemoSite.NUnit", "UmbracoDemoSite.NUnit\UmbracoDemoSite.NUnit.csproj", "{BB72BBE5-284B-4A6D-94A0-770E10973E8B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +56,12 @@ Global
 		{A00B9A9A-43A0-4F05-92C3-DDBF5750C68D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A00B9A9A-43A0-4F05-92C3-DDBF5750C68D}.Testing|Any CPU.ActiveCfg = Testing|Any CPU
 		{A00B9A9A-43A0-4F05-92C3-DDBF5750C68D}.Testing|Any CPU.Build.0 = Testing|Any CPU
+		{BB72BBE5-284B-4A6D-94A0-770E10973E8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB72BBE5-284B-4A6D-94A0-770E10973E8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB72BBE5-284B-4A6D-94A0-770E10973E8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB72BBE5-284B-4A6D-94A0-770E10973E8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB72BBE5-284B-4A6D-94A0-770E10973E8B}.Testing|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB72BBE5-284B-4A6D-94A0-770E10973E8B}.Testing|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
